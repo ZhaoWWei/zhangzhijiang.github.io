@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>张志江 - 苏州科技大学</title>
+    <title>何维 - 浙江工业大学浙江碳中和创新研究院</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome 图标 -->
@@ -14,39 +14,69 @@
             --secondary-color: #3498db;
             --accent-color: #e74c3c;
             --light-bg: #f8f9fa;
+            --text-color: #333;
+            --border-color: #e0e0e0;
         }
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f5f7fa;
-            color: #333;
+            color: var(--text-color);
             line-height: 1.6;
+            padding-top: 80px; /* 为固定导航栏留出空间 */
         }
         
+        /* 导航栏样式 */
         .navbar {
             background-color: var(--primary-color);
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 0.8rem 0;
         }
         
         .navbar-brand {
             font-weight: bold;
+            font-size: 1.5rem;
         }
         
         .nav-link {
             color: rgba(255,255,255,0.85) !important;
             transition: color 0.3s;
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
         }
         
         .nav-link:hover {
             color: white !important;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 4px;
         }
         
+        .navbar-toggler {
+            border: none;
+            color: white;
+        }
+        
+        /* 访问量统计 */
+        .visit-counter {
+            background-color: var(--light-bg);
+            border-radius: 4px;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            display: inline-block;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        /* 各部分标题样式 */
         .section-title {
             color: var(--primary-color);
             border-bottom: 2px solid var(--secondary-color);
             padding-bottom: 0.5rem;
             margin-bottom: 1.5rem;
             position: relative;
+            font-weight: 600;
         }
         
         .section-title:after {
@@ -59,14 +89,17 @@
             background: var(--accent-color);
         }
         
-        .profile-section {
+        /* 内容卡片样式 */
+        .content-card {
             background: white;
             border-radius: 8px;
             padding: 2rem;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
         }
         
+        /* 头像样式 */
         .avatar {
             width: 200px;
             height: 200px;
@@ -74,8 +107,10 @@
             object-fit: cover;
             border: 5px solid var(--secondary-color);
             margin-bottom: 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         
+        /* 时间线样式 */
         .timeline {
             position: relative;
             padding-left: 2rem;
@@ -109,25 +144,36 @@
             box-shadow: 0 0 0 2px var(--secondary-color);
         }
         
-        .publication-item {
+        .timeline-date {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* 成果卡片样式 */
+        .achievement-card {
             background: white;
             border-radius: 8px;
             padding: 1.5rem;
             margin-bottom: 1.5rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             border-left: 4px solid var(--secondary-color);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color);
         }
         
-        .publication-title {
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .achievement-title {
             font-weight: bold;
             color: var(--primary-color);
+            margin-bottom: 0.5rem;
         }
         
-        .publication-journal {
-            color: #6c757d;
-            font-style: italic;
-        }
-        
+        /* 团队成员卡片样式 */
         .team-card {
             background: white;
             border-radius: 8px;
@@ -135,11 +181,13 @@
             margin-bottom: 1.5rem;
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
             text-align: center;
-            transition: transform 0.3s;
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color);
         }
         
         .team-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         .team-avatar {
@@ -151,6 +199,45 @@
             border: 3px solid var(--secondary-color);
         }
         
+        /* 新闻动态样式 */
+        .news-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-left: 3px solid var(--secondary-color);
+            border: 1px solid var(--border-color);
+        }
+        
+        /* 研究兴趣样式 */
+        .research-interest {
+            background-color: var(--light-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+        
+        /* 底部样式 */
+        .footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer a:hover {
+            color: white;
+        }
+        
+        /* 徽章样式 */
         .badge-jcr {
             background-color: var(--secondary-color);
             color: white;
@@ -161,38 +248,12 @@
             color: white;
         }
         
-        .footer {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 2rem 0;
-            margin-top: 3rem;
-        }
-        
-        .visit-counter {
-            background-color: var(--light-bg);
-            border-radius: 4px;
-            padding: 0.5rem 1rem;
-            font-size: 0.9rem;
-            color: var(--primary-color);
-        }
-        
-        .research-interest {
-            background-color: var(--light-bg);
-            border-radius: 4px;
-            padding: 1rem;
-            margin-bottom: 1rem;
-        }
-        
-        .news-item {
-            background-color: white;
-            border-radius: 8px;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            border-left: 3px solid var(--secondary-color);
-        }
-        
+        /* 响应式设计 */
         @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+            
             .avatar {
                 width: 150px;
                 height: 150px;
@@ -205,14 +266,30 @@
             .timeline-item::before {
                 left: -1.9rem;
             }
+            
+            .content-card, .achievement-card, .team-card, .news-item {
+                padding: 1rem;
+            }
+        }
+        
+        /* 打印样式 */
+        @media print {
+            .navbar, .footer, .visit-counter {
+                display: none;
+            }
+            
+            .content-card, .achievement-card, .team-card, .news-item {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
         }
     </style>
 </head>
 <body>
     <!-- 导航栏 -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">张志江 个人主页</a>
+            <a class="navbar-brand" href="#">何维 个人主页</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -225,33 +302,32 @@
                     <li class="nav-item"><a class="nav-link" href="#publications">学术成果</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">科研项目</a></li>
                     <li class="nav-item"><a class="nav-link" href="#team">团队成员</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#news">课题组动态</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">联系方式</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- 访问量统计 -->
-    <div class="container mt-3">
-        <div class="visit-counter d-inline-block">
+    <!-- 主要内容区域 -->
+    <div class="container">
+        <!-- 访问量统计 -->
+        <div class="visit-counter">
             <i class="fas fa-eye me-1"></i> 总访问量: 4571
         </div>
-    </div>
 
-    <!-- 主要内容区域 -->
-    <div class="container mt-4">
         <!-- 个人简介 -->
-        <section id="profile" class="profile-section">
+        <section id="profile" class="content-card">
             <div class="row align-items-center">
                 <div class="col-md-4 text-center">
-                    <img src="#" alt="何维头像" class="avatar">
-                    <h2>张志江</h2>
-                    <p class="text-muted">xxxxxx</p>
+                    <img src="https://via.placeholder.com/200" alt="何维头像" class="avatar">
+                    <h2>何维</h2>
+                    <p class="text-muted">副研究员，博士生导师</p>
                 </div>
                 <div class="col-md-8">
-                    <p>学习经历简介</p>
-                    <p>项目经历简介</p>
-                    <p>科研成果简介。</p>
+                    <p>1986年生，湖北浠水人。浙江工业大学副研究员，博士生导师。南京大学与荷兰格罗宁根大学联合培养博士。从事遥感、生态、大气和计算机等交叉学科研究，核心方向为气候变化背景下区域碳循环遥感、模拟与数据同化。</p>
+                    <p>主持国家自然科学基金面上项目、青年项目等科研项目7项，参与国家重点研发计划项目和国家自然科学基金项目等6项。以第一或通讯作者在Geoscientific Model Development、Journal of Advances in Modeling Earth Systems、Agricultural and Forest Meteorology和Journal of Geophysical Research-Atmospheres等地球科学及环境科学与生态学领域知名学术期刊发表论文20余篇，并在Science、PNAS和Science Advances等期刊合作发表学术论文60余篇。</p>
+                    <p>论文被引用3000余次，H指数为27；获得Wiley威立中国开放科学高贡献作者奖、Wiley旗下杂志年度TOP10高被引论文、ESI高被引论文和Journal of Remote Sensing杂志高关注度论文奖等。</p>
                     <div class="mt-3">
                         <a href="#" class="btn btn-primary me-2"><i class="fas fa-download me-1"></i> 简历下载</a>
                         <a href="#" class="btn btn-outline-primary me-2"><i class="fas fa-envelope me-1"></i> 联系我</a>
@@ -262,66 +338,87 @@
         </section>
 
         <!-- 研究兴趣 -->
-        <section id="research" class="mb-5">
+        <section id="research" class="content-card">
             <h2 class="section-title">研究兴趣</h2>
             <div class="row">
                 <div class="col-md-6">
                     <div class="research-interest">
-                        <h5>方向一</h5>
-                        <p class="text-muted">关联学科</p>
+                        <h5>大气CO₂及痕量气体成分模拟与源汇反演</h5>
+                        <p class="text-muted">大气科学、计算机科学、遥感科学</p>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="research-interest">
-                        <h5>方向二</h5>
-                        <p class="text-muted">关联学科</p>
+                        <h5>深度学习在地球系统科学研究中的应用</h5>
+                        <p class="text-muted">计算机科学、生态科学、遥感科学</p>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="research-interest">
-                        <h5>方向三</h5>
-                        <p class="text-muted">关联学科学</p>
+                        <h5>极端气候胁迫下陆地生态系统碳水通量模拟</h5>
+                        <p class="text-muted">生态科学、遥感科学</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="research-interest">
+                        <h5>多源观测约束下区域碳收支时空估算及其驱动机制</h5>
+                        <p class="text-muted">大气科学、生态科学、遥感科学</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- 工作经历 -->
-        <section id="experience" class="mb-5">
+        <section id="experience" class="content-card">
             <h2 class="section-title">工作经历</h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-date">时间段</div>
-                    <h4>苏州科技大学</h4>
-                    <p class="text-muted">副教授</p>
+                    <div class="timeline-date">2024.03至今</div>
+                    <h4>浙江工业大学浙江碳中和创新研究院</h4>
+                    <p class="text-muted">副研究员</p>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">时间段2</div>
-                    <h4>苏州科技大学</h4>
-                    <p class="text-muted">讲师</p>
+                    <div class="timeline-date">2021.07-2024.02</div>
+                    <h4>南京大学国际地球系统科学研究所</h4>
+                    <p class="text-muted">特任副研究员</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2018.07-2021.06</div>
+                    <h4>南京大学国际地球系统科学研究所</h4>
+                    <p class="text-muted">特任助理研究员</p>
                 </div>
             </div>
         </section>
 
         <!-- 教育背景 -->
-        <section id="education" class="mb-5">
+        <section id="education" class="content-card">
             <h2 class="section-title">教育背景</h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-date">时间段</div>
-                    <h4>武汉大学xxxx院</h4>
-                    <p class="text-muted">方向，学位</p>
+                    <div class="timeline-date">2014.05-2016.04</div>
+                    <h4>荷兰格罗宁根大学科学与工程学院</h4>
+                    <p class="text-muted">能源与可持续发展研究所，大气科学，博士联培</p>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">时间段</div>
-                    <h4>中国地质大学（北京）xxxxxx院</h4>
-                    <p class="text-muted">专业方向，学位</p>
+                    <div class="timeline-date">2013.09-2018.03</div>
+                    <h4>南京大学国际地球系统科学研究所</h4>
+                    <p class="text-muted">地图学与地理信息系统，理学博士</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2010.09-2013.06</div>
+                    <h4>北京师范大学地理学与遥感科学学院</h4>
+                    <p class="text-muted">地图学与地理信息系统，理学硕士</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2005.09-2009.06</div>
+                    <h4>湖北大学资源环境学院</h4>
+                    <p class="text-muted">地理信息系统，理学学士</p>
                 </div>
             </div>
         </section>
 
         <!-- 学术成果 -->
-        <section id="publications" class="mb-5">
+        <section id="publications" class="content-card">
             <h2 class="section-title">代表性学术成果</h2>
             
             <ul class="nav nav-tabs" id="pubTabs" role="tablist">
@@ -338,44 +435,45 @@
             
             <div class="tab-content mt-3" id="pubTabContent">
                 <div class="tab-pane fade show active" id="2026" role="tabpanel">
-                    <div class="publication-item">
-                        <div class="publication-title">论文1</div>
-                        <div class="publication-journal">期刊名称，发表时间，当前状态</div>
+                    <div class="achievement-card">
+                        <div class="achievement-title">Huang, C., He, W.*, Byrne, B., Nguyen, N.T., Xiao, J., Yang, H., et al. Memory-based deep learning integrating multi-source satellite data leads to improved estimation of net ecosystem CO₂ exchange over North America.</div>
+                        <div class="publication-journal">Agricultural and Forest Meteorology, 2025. (返修)</div>
                         <div class="mt-2">
-                            <span class="badge badge-jcr me-1">期刊类型</span>
+                            <span class="badge badge-jcr me-1">JCR Q1</span>
+                            <span class="badge badge-top me-1">中科院一区 Top期刊</span>
                         </div>
                     </div>
                     
-                     <div class="publication-item">
-                        <div class="publication-title">论文1</div>
-                        <div class="publication-journal">期刊名称，发表时间，当前状态</div>
+                    <div class="achievement-card">
+                        <div class="achievement-title">Zhao, M., Yang, Y., Weng, G., He, W., Yang, H.*, Nguyen, N.T., et al. Fusing enhanced flux measurements and multi-source satellite observations to improve GPP estimation for the Qinghai-Tibet Plateau based on AutoML techniques.</div>
+                        <div class="publication-journal">Remote Sensing, 2026, 18(1), 130.</div>
                         <div class="mt-2">
-                            <span class="badge badge-jcr me-1">期刊类型</span>
+                            <a href="https://doi.org/10.3390/rs18010130" class="btn btn-sm btn-outline-primary" target="_blank">查看原文</a>
                         </div>
                     </div>
                 </div>
                 
                 <div class="tab-pane fade" id="2025" role="tabpanel">
-                    <div class="publication-item">
-                         <div class="publication-item">
-                        <div class="publication-title">论文1</div>
-                        <div class="publication-journal">期刊名称，发表时间，当前状态</div>
+                    <div class="achievement-card">
+                        <div class="achievement-title">Chen, H., Liu, J.X., He, W.*, Xu, P., Nguyen, N.T., Lv, Y., Huang, C. Shifted vegetation resilience from loss to gain driven by changes in water availability and solar radiation over the last two decades in Southwest China.</div>
+                        <div class="publication-journal">Agricultural and Forest Meteorology, 2025, 368: 110543.</div>
                         <div class="mt-2">
-                            <span class="badge badge-jcr me-1">期刊类型</span>
+                            <span class="badge badge-jcr me-1">JCR Q1</span>
+                            <span class="badge badge-top me-1">中科院一区 Top期刊</span>
+                            <a href="https://doi.org/10.1016/j.agrformet.2025.110543" class="btn btn-sm btn-outline-primary ms-2" target="_blank">查看原文</a>
                         </div>
-                    </div>
                     </div>
                 </div>
                 
                 <div class="tab-pane fade" id="2024" role="tabpanel">
-                    <div class="publication-item">
-                       <div class="publication-item">
-                        <div class="publication-title">论文1</div>
-                        <div class="publication-journal">期刊名称，发表时间，当前状态</div>
+                    <div class="achievement-card">
+                        <div class="achievement-title">Chen, H., He, W.*, Liu, J.X., Nguyen, N.T., Chevallier, F., Yang, H.*, Lv, Y., Huang, C., Rödenbeck, C., Miller, S.M., Jiang, F., Liu, J.J., Johnson, M.S., Philip, S., Liu, Z., Zeng, N., Basu, S., Baker, D.F. Satellite-detected large CO₂ release in southwestern North America during the 2020–2021 drought and associated wildfires.</div>
+                        <div class="publication-journal">Environmental Research Letters, 2024, 19(5):054047.</div>
                         <div class="mt-2">
-                            <span class="badge badge-jcr me-1">期刊类型</span>
+                            <span class="badge badge-jcr me-1">JCR Q1</span>
+                            <span class="badge badge-top me-1">中科院分区 Top期刊</span>
+                            <a href="https://doi.org/10.1088/1748-9326/ad3cf7" class="btn btn-sm btn-outline-primary ms-2" target="_blank">查看原文</a>
                         </div>
-                    </div>
                     </div>
                 </div>
             </div>
@@ -386,44 +484,40 @@
         </section>
 
         <!-- 科研项目 -->
-        <section id="projects" class="mb-5">
+        <section id="projects" class="content-card">
             <h2 class="section-title">科研项目</h2>
             
             <h4 class="mt-4">主持项目</h4>
-            <div class="list-group">
-                <div class="list-group-item">
-                    <h5>项目类型</h5>
-                    <p>项目名称 (项目号: )</p>
-                    <p class="text-muted">状态</p>
-                </div>
-               <div class="list-group-item">
-                    <h5>项目类型</h5>
-                    <p>项目名称 (项目号: )</p>
-                    <p class="text-muted">状态</p>
-                </div>
+            <div class="achievement-card">
+                <h5>国家自然科学基金面上项目</h5>
+                <p>"基于卫星CO₂和SIF数据同化的中国陆地碳汇及碳利用效率研究" (项目号: 42277453)</p>
+                <p class="text-muted">在研</p>
+            </div>
+            <div class="achievement-card">
+                <h5>湖州市科技计划公益性应用研究项目(农业类)</h5>
+                <p>"基于多源卫星遥感的湖州市生态系统碳汇评估" (项目号: 2024GZ50)</p>
+                <p class="text-muted">在研</p>
             </div>
             
             <h4 class="mt-4">参与项目</h4>
-            <div class="list-group">
-                 <div class="list-group-item">
-                    <h5>项目类型</h5>
-                    <p>项目名称 (项目号: )</p>
-                    <p class="text-muted">状态</p>
-                </div>
+            <div class="achievement-card">
+                <h5>国家重点研发计划项目</h5>
+                <p>"全球温室气体天空地立体化观测与反演"第四课题"多尺度温室气体嵌套模拟与同化研究" (项目号: 2020YFA0607504)子课题</p>
+                <p class="text-muted">结题</p>
             </div>
         </section>
 
         <!-- 团队成员 -->
-        <section id="team" class="mb-5">
+        <section id="team" class="content-card">
             <h2 class="section-title">团队成员</h2>
             
             <div class="row">
                 <div class="col-md-4">
                     <div class="team-card">
-                        <img src="https://via.placeholder.com/100" alt="xxx" class="team-avatar">
-                        <h5>姓名</h5>
-                        <p class="text-muted">学历</p>
-                        <p>方向</p>
+                        <img src="https://via.placeholder.com/100" alt="赵梦瑶" class="team-avatar">
+                        <h5>赵梦瑶</h5>
+                        <p class="text-muted">硕士生</p>
+                        <p>研究方向：青藏高原碳收支估算</p>
                         <div class="social-links">
                             <a href="#"><i class="fas fa-envelope"></i></a>
                         </div>
@@ -459,15 +553,20 @@
         </section>
 
         <!-- 课题组动态 -->
-        <section id="news" class="mb-5">
+        <section id="news" class="content-card">
             <h2 class="section-title">课题组动态</h2>
             
             <div class="news-item">
-                <h5>时间</h5>
-                <p>活动简介</p>
-                <a href="https://mp.weixin.qq.com/s/FycPzVEDlGEa67agxDyZ-g" target="_blank">查看报道（新闻链接）</a>
+                <h5>2025年12月30日</h5>
+                <p>课题组硕士生赵梦瑶关于利用强化通量观测和自动机器学习改进青藏高原总初级生产力区域估算的学术成果在Remote Sensing期刊发表！</p>
+                <a href="https://mp.weixin.qq.com/s/FycPzVEDlGEa67agxDyZ-g" target="_blank">查看报道</a>
             </div>
-        
+            
+            <div class="news-item">
+                <h5>2025年11月28日-12月1日</h5>
+                <p>课题组何维老师和硕士生雷新慧、黄子懿、马腾、罗霞、姬鑫茁、詹慧萍等赴广州参加第二十三届中国遥感大会，四名同学作口头报告交流、其中马腾同学荣获第二十三届中国遥感大会优秀报告奖。</p>
+                <a href="https://mp.weixin.qq.com/s/lKmelj4m7O7OWa93JbKayg" target="_blank">查看报道</a>
+            </div>
             
             <div class="text-center mt-4">
                 <a href="#" class="btn btn-primary">查看全部动态</a>
@@ -481,22 +580,22 @@
             <div class="row">
                 <div class="col-md-6">
                     <h4>联系方式</h4>
-                    <p><i class="fas fa-map-marker-alt me-2"></i> 地址：xxxx  邮编：xxxx</p>
-                    <p><i class="fas fa-phone me-2"></i> 咨询电话：xxxxxx</p>
-                    <p><i class="fas fa-envelope me-2"></i> 邮箱：xxxxx</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> 地址：浙江省杭州市拱墅区潮王路18号 邮编 310014</p>
+                    <p><i class="fas fa-phone me-2"></i> 咨询电话：0571-88320114</p>
+                    <p><i class="fas fa-envelope me-2"></i> 邮箱：email@example.com</p>
                 </div>
                 <div class="col-md-6">
                     <h4>外部链接</h4>
                     <div class="external-links">
-                        <a href="#" class="text-light me-3"><i class="fab fa-google-scholar me-1"></i> Google Scholar</a>
-                        <a href="#" class="text-light me-3"><i class="fab fa-researchgate me-1"></i> ResearchGate</a>
-                        <a href="#" class="text-light me-3"><i class="fab fa-orcid me-1"></i> ORCID</a>
-                        <a href="#" class="text-light"><i class="fas fa-globe me-1"></i> 实验室主页</a>
+                        <a href="#" class="me-3"><i class="fab fa-google-scholar me-1"></i> Google Scholar</a>
+                        <a href="#" class="me-3"><i class="fab fa-researchgate me-1"></i> ResearchGate</a>
+                        <a href="#" class="me-3"><i class="fab fa-orcid me-1"></i> ORCID</a>
+                        <a href="#"><i class="fas fa-globe me-1"></i> 实验室主页</a>
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-4 pt-3 border-top">
-                <p>© 2026 张志坚 - 苏州科技大学. 保留所有权利.</p>
+            <div class="text-center mt-4 pt-3 border-top border-white border-opacity-25">
+                <p>© 2025 何维 - 浙江工业大学浙江碳中和创新研究院. 保留所有权利.</p>
             </div>
         </div>
     </footer>
@@ -506,7 +605,43 @@
     <script>
         // 简单的访问量计数器（实际应用中应从后端获取）
         document.addEventListener('DOMContentLoaded', function() {
-            // 这里可以添加更多交互功能
+            // 平滑滚动效果
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // 导航栏激活状态
+            window.addEventListener('scroll', function() {
+                const sections = document.querySelectorAll('section');
+                const navLinks = document.querySelectorAll('.nav-link');
+                
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    if(window.scrollY >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if(link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
         });
     </script>
 </body>
